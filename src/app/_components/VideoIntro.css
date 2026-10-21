@@ -1,0 +1,68 @@
+.videoIntro {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  height: 100svh;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.videoFrame {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  background: #5da6ca;
+}
+
+.videoFrame::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 20, 17, 0.72) 0%,
+    rgba(12, 20, 17, 0.36) 58%,
+    rgba(12, 20, 17, 0.12) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.videoCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.videoFrameCorner {
+  position: absolute;
+  z-index: 1;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-color: rgba(242, 240, 233, 0.8);
+}
+
+.videoFrameCornerTop {
+  top: 0.9rem;
+  left: 0.9rem;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.videoFrameCornerBottom {
+  right: 0.9rem;
+  bottom: 0.9rem;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+@media (max-width: 700px) {
+  .videoFrame::after {
+    background: linear-gradient(
+      180deg,
+      rgba(12, 20, 17, 0.58) 0%,
+      rgba(12, 20, 17, 0.3) 58%,
+      rgba(12, 20, 17, 0.68) 100%
+    );
+  }
+}

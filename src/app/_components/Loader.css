@@ -1,0 +1,137 @@
+.loaderScreen {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  color: #f1eddf;
+  background: #17251f;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.loaderBackgroundRing {
+  position: absolute;
+  width: min(70vw, 50rem);
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  overflow: visible;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.loaderBackgroundRing circle {
+  stroke: rgba(217, 230, 191, 0.08);
+}
+
+.loader-bar {
+  width: 300px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+.loader-progress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-shockingly-green, #d9e6bf);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+
+/* .loaderScreen::after {
+  width: min(48vw, 34rem);
+} */
+
+.loaderContent {
+  z-index: 1;
+  display: flex;
+  width: min(20rem, 80vw);
+  flex-direction: column;
+  align-items: center;
+}
+
+.loaderMark {
+  position: relative;
+  display: grid;
+  width: 4.5rem;
+  height: 4.5rem;
+  place-items: center;
+  margin-bottom: 2.1rem;
+}
+
+.loaderMark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.loaderMark svg{
+  position:absolute;
+  inset:0;
+
+}
+
+/* .loaderMark span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d9e6bf;
+  border-radius: 50%;
+} */
+
+.loaderMark span:nth-child(2) {
+  width: 68%;
+  height: 68%;
+  border-color: #c77454;
+}
+
+.loaderMark span:nth-child(3) {
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 0;
+  background: #d9e6bf;
+}
+
+.loaderName {
+  margin-bottom: 1.4rem;
+  color: #d9e6bf;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+}
+
+.loaderTrack {
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(241, 237, 223, 0.24);
+}
+
+.loaderProgress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #d9e6bf;
+}
+
+.loaderHint {
+  margin-top: 0.9rem;
+  color: rgba(241, 237, 223, 0.62);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loaderMark,
+  .loaderName {
+    opacity: 1;
+  }
+}
